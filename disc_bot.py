@@ -2,13 +2,14 @@ import discord
 import random
 import requests
 import json
+import os
 
 client = discord.Client()
 
 sad_words = ["sad", "depressed", "unhappy", "angry", "miserable", "depressing"]
 
 sad_response = [
-    "Well.. sucks to suck.",
+    "Well.. sucks.",
     "Nobody's perfect.",
     "Nice.",
     "Nobody cares.",
@@ -56,4 +57,4 @@ async def on_message(message):
         await message.channel.send(random.choice(happy_response))
 
 
-client.run('')
+client.run(os.getenv('TOKEN'))
